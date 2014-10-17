@@ -107,7 +107,7 @@ function create() {
 }
 
 /* Draw a line dynamically to display the drag */
-<<<<<<< HEAD:Event.js
+//<<<<<<< HEAD:Event.js
 /*function drawLine(element1,mainWindow, x1, y1, x2, y2){*/
 /*    console.log("draw line");
 =======
@@ -180,7 +180,7 @@ function getPersonPosition(person, i){
 //    return positionsArray[i-2];
 //}
 */
-=======
-    return positionsArray[i-2];
-}
->>>>>>> dba4c4c43fde12cddec6dc00955cdc7ccfce61e8:controller/Event.js
+//=======
+  //  return positionsArray[i-2];
+//}
+//>>>>>>> dba4c4c43fde12cddec6dc00955cdc7ccfce61e8:controller/Event.js

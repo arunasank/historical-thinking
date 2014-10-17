@@ -6,7 +6,7 @@ import "."
 import "../controller/Line.js" as Line
 
 Item{
-    id:event
+    id:basicLine
     width:100/1366 * Screen.desktopAvailableWidth
     height:100/768 * Screen.desktopAvailableHeight
 
@@ -17,90 +17,16 @@ Item{
     property string impactFactor
     property string type
     property alias propertiesVisible:properties.visible
-    /*property int centerX: event.x + event.width/2
+    property int centerX: event.x + event.width/2
     property int centerY: event.y + event.height/2
     property alias eventButtonProperty:eventButton
+    property alias basicLineProperty:basicLineRectangle
 
     property variant eventPeople
-    property variant associatedTimelineObjectName*/
-
-//    Menu{
-//        id:eventMenu
-//        MenuItem{
-//            text:qsTr("Delete")
-//            onTriggered: {
-//                event.destroy();
-//                historyWindow.eventCount -= 1;
-//            }
-//        }
-//        MenuItem{
-//            text:qsTr("Properties")
-//            onTriggered: Event.makeAllOtherPropertyBoxesInvisible(event);
-//        }
-//    }
-
-    Rectangle {
-        id: basicline
-        property alias z1:l.z
-        property alias x1: l.x
-        property alias y1: l.y
-
-        property real x2: l.x
-        property real y2: l.y
-
-        color: "black"
-        height: 2
-        smooth: true;
-    }
-    /*Button{
-        id:eventButton
-        width: 100/1366 * Screen.desktopAvailableWidth
-        height: 100/768 * Screen.desktopAvailableHeight
-        buttonLabel: "Click to\nadd name"
-        buttonColor: "lightblue"
-
-        MouseArea{
-            anchors.fill:parent
-            drag.target: eventButton
-            acceptedButtons: Qt.RightButton | Qt.LeftButton
-            onClicked: {
-                if(mouse.button == Qt.RightButton){
-                    eventMenu.popup();
-                }
-            }
-        }
-    }*/
-
-//    EventProperties
-//    {
-//        id:properties
-//        visible:false
-//    }
-
-
-}
-
-
-/*import QtQuick 2.0
-import "."
-import "Line.js" as Line
-
-
-Item {
-    id:basicline
-    width:100/1366 * Screen.desktopAvailableWidth
-    height:100/768 * Screen.desktopAvailableHeight
-
-    property int eventId1
-    property int eventId2
-    property int personId
-    property int priorityId
-    property string impactFactor
-    property string type
-    property alias propertiesVisible:properties.visible
+    property variant associatedTimelineObjectName
 
     Menu{
-        id:basiclineMenu
+        id:basicLineMenu
         MenuItem{
             text:qsTr("Delete")
             onTriggered: {
@@ -110,23 +36,20 @@ Item {
         }
         MenuItem{
             text:qsTr("Properties")
-            onTriggered:{
-                Line.makeAllOtherPropertyBoxesInvisible(basicline);
-            }
+            onTriggered: Line.makeAllOtherPropertyBoxesInvisible(basicLine);
         }
     }
-
     Rectangle {
         id: basicline
-        property alias x1: l.x
-        property alias y1: l.y
+        property alias z1:basicline.z
+        property alias x1: basicline.x
+        property alias y1: basicline.y
 
-        property real x2: l.x
-        property real y2: l.y
+        property real x2: basicline.x
+        property real y2: basicline.y
 
-        color: "red"
-        width: 100/1366 * Screen.desktopAvailableWidth
-        height: 500/768 * Screen.desktopAvailableHeight
+        color: "black"
+        height: 2
         smooth: true;
 
 
@@ -164,4 +87,12 @@ Item {
                 return 0;
         }
     }
-}*/
+
+//    EventProperties
+//    {
+//        id:properties
+//        visible:false
+//    }
+
+
+}

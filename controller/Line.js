@@ -1,15 +1,16 @@
 function create() {
-    var basicline;
+    var basicLine;
 
     if(historyWindow.timelineCount > 0)
     {
-        basicline = Qt.createComponent("../view/BasicLine.qml").createObject(historyWindow,
-                                                             {"objectName":"basicline" + (historyWindow.basiclineNameCount)});
-        basicline.y = 0;
-        basicline.x = 110*historyWindow.basiclineCount;
+        basicLine = Qt.createComponent("../view/BasicLine.qml").createObject(historyWindow,
+                                    {"objectName":"basicLine" + (historyWindow.basiclineNameCount)});
+        console.log(basicLine);
+        basicLine.y = 100;
+        basicLine.x = 250*historyWindow.basicLineCount;
 
-        if(basicline.placementX > scrollableWindow.width){
-            historyWindow.width += 2* basicline.placementX;
+        if(basicLine.placementX > scrollableWindow.width){
+            historyWindow.width += 2* basicLine.placementX;
         }
 
         historyWindow.basiclineCount++;
@@ -24,32 +25,3 @@ function create() {
     }
 
 }
-/*function create() {
-    var basicline;
-
-    if(historyWindow.timelineCount > 0)
-    {        
-        basicline = Qt.createComponent("BasicLine.qml").createObject(historyWindow,
-                                                             {"objectName":"basicline" + (historyWindow.basiclineNameCount)});
-
-        console.log(basicline);
-        basicline.x = 500*historyWindow.basicLineCount;
-        basicline.y = 600;
-
-
-        if(basicline.placementX > scrollableWindow.width){
-            historyWindow.width += 2* basicline.placementX;
-        }
-
-        historyWindow.basiclineCount++;
-        historyWindow.basiclineNameCount++;
-
-    }
-    else
-    {
-        error.visible = true;
-        error.errorMessageProperty = "Please create a timeline first!"
-    }
-}*/
-
-

@@ -18,7 +18,7 @@ Item{
     property alias propertiesVisible:properties.visible
     property int centerX: event.x + event.width/2
     property int centerY: event.y + event.height/2
-    property alias eventButtonProperty:eventButton
+    //property alias eventButtonProperty:eventButton
 
     property variant eventPeople
     property variant associatedTimelineObjectName
