@@ -3,8 +3,8 @@ function create() {
 
     if(historyWindow.timelineCount > 0)
     {
-        event = Qt.createComponent("Event.qml").createObject(historyWindow,
-                                                             {"objectName":"event" + (historyWindow.eventNameCount)});
+        event = Qt.createComponent("../view/Event.qml").createObject(historyWindow,
+                                    {"objectName":"event" + (historyWindow.eventNameCount)});
         event.y = 0;
         event.x = 110*historyWindow.eventCount;
 
@@ -30,7 +30,7 @@ function create() {
     var i=0;
 
     for(;i<event.parent.children.length;i++){
-        if(event.parent.children[i].objectName.indexOf("event") != -1){
+        if(event.parent.children[i] && event.parent.children[i].objectName.indexOf("event") != -1){
             if(event.parent.children[i].propertiesVisible){
                 event.parent.children[i].propertiesVisible = false;
             }
@@ -107,8 +107,13 @@ function create() {
 }
 
 /* Draw a line dynamically to display the drag */
+<<<<<<< HEAD:Event.js
 /*function drawLine(element1,mainWindow, x1, y1, x2, y2){*/
 /*    console.log("draw line");
+=======
+function drawLine(element1,mainWindow, x1, y1, x2, y2){
+   console.log("draw line");
+>>>>>>> dba4c4c43fde12cddec6dc00955cdc7ccfce61e8:controller/Event.js
     historyWindow.linkCount++;
     var line = Qt.createComponent("Link.qml").createObject(mainWindow,
                                                            {"objectName":"link" + historyWindow.linkCount});
@@ -164,13 +169,18 @@ function eventDragged(event, differenceX, differenceY){
     }
 }
 
-//function getPersonPosition(person, i){
-//    var positionsArray = [{"x":(person.x + person.width),"y":person.y},
-//                          {"x":(person.x+person.width),"y":(person.y  - person.height)},
-//                          {"x":person.x,"y":(person.y  - person.height)},
-//                          {"x":(person.x-person.width),"y":(person.y  - person.height)},
-//                          {"x":person.x - person.width,"y":person.y}];
+function getPersonPosition(person, i){
+    var positionsArray = [{"x":(person.x + person.width),"y":person.y},
+                          {"x":(person.x+person.width),"y":(person.y  - person.height)},
+                          {"x":person.x,"y":(person.y  - person.height)},
+                          {"x":(person.x-person.width),"y":(person.y  - person.height)},
+                          {"x":person.x - person.width,"y":person.y}];
 
+<<<<<<< HEAD:Event.js
 //    return positionsArray[i-2];
 //}
 */
+=======
+    return positionsArray[i-2];
+}
+>>>>>>> dba4c4c43fde12cddec6dc00955cdc7ccfce61e8:controller/Event.js
